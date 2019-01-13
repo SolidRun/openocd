@@ -304,6 +304,11 @@ AS_CASE(["${host_cpu}"],
       AS_HELP_STRING([--enable-imx_gpio], [Enable building support for bitbanging on NXP IMX processors]),
       [build_imx_gpio=$enableval], [build_imx_gpio=no])
   ],
+  [aarch64*], [
+    AC_ARG_ENABLE([imx_gpio],
+      AS_HELP_STRING([--enable-imx_gpio], [Enable building support for bitbanging on NXP IMX processors]),
+      [build_imx_gpio=$enableval], [build_imx_gpio=no])
+  ],
   [
     build_ep93xx=no
     build_at91rm9200=no

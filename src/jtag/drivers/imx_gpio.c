@@ -27,7 +27,11 @@
 #include <sys/mman.h>
 
 #define IMX_GPIO_BASE 0x0209c000
+#if defined(__aarch64__)
+#define IMX_GPIO_SIZE 0x00010000
+#else
 #define IMX_GPIO_SIZE 0x00004000
+#endif
 #define IMX_GPIO_REGS_COUNT 8
 
 static uint32_t imx_gpio_peri_base = IMX_GPIO_BASE;
